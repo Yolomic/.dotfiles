@@ -4,7 +4,7 @@
 # Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 export PATH="$HOME/.local/bin:$PATH"
-
+export PATH="$HOME/.local/zed.app/bin:$PATH"
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time Oh My Zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
@@ -75,7 +75,7 @@ source ~/.zplug/init.zsh
 source ~/.zsh/catppuccin_mocha-zsh-syntax-highlighting.zsh
 plugins=(git zsh-autosuggestions fast-syntax-highlighting zsh-syntax-highlighting history python zoxide)
 
-source $ZSH/oh-my-zsh.sh
+#source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
@@ -86,9 +86,9 @@ source $ZSH/oh-my-zsh.sh
 
 # Preferred editor for local and remote sessions
  if [[ -n $SSH_CONNECTION ]]; then
-   export EDITOR='zeditor'
+   export EDITOR='zed'
  else
-   export EDITOR='zeditor'
+   export EDITOR='zed'
  fi
 
 # Compilation flags
@@ -128,10 +128,10 @@ export FZF_DEFAULT_OPTS=" \
 #FZF Themeing End
 
 # Aliases
-alias ohmyzsh="zeditor ~/.oh-my-zsh"
-alias bashrc='zeditor  ~/.bashrc'
+alias ohmyzsh="zed ~/.oh-my-zsh"
+alias bashrc='zed  ~/.bashrc'
 alias ls='ls --color=auto'
-alias zed='zeditor'
+#alias zed='zeditor'
 alias grep='grep --color=auto'
 alias get='sudo pacman -S'
 alias update='sudo pacman -Syu'
@@ -143,10 +143,12 @@ alias nffs='fastfetch'
 alias c='clear'
 alias yay='paru'
 alias reload='source ~/.zshrc'
-alias zshrc='zeditor  ~/.zshrc'
+alias zshrc='zed  ~/.zshrc'
 alias arch-server='ssh gavlab@172.25.6.72'
 alias ls='lsd'
 alias shutdown='sudo shutdown -h now'
+alias bios='sudo systemctl reboot --firmware-setup'
+alias cdc='cd && clear'
 # Prompt
 eval "$(oh-my-posh init zsh --config 'https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/refs/heads/main/themes/clean-detailed.omp.json' )"
 # Ensure aliases work with sudo
